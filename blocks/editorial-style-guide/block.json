@@ -1,0 +1,19 @@
+{
+	"name": "ucsc-comm/editorial",
+	"title": "Editorial Style Guide",
+	"description": "UC Santa Cruz Editorial Style Guide.",
+	"style": [
+		"file:./editorial-style.css"
+	],
+	"category": "formatting",
+	"icon": "admin-comments",
+	"keywords": [
+		"style guide",
+		"query"
+	],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "editorial-style.php"
+	},
+	"align": "full"
+}

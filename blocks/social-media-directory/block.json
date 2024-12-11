@@ -1,0 +1,19 @@
+{
+	"name": "ucsc-comm/social-media",
+	"title": "Social Media Directory",
+	"description": "UC Santa Cruz Social Media Directory.",
+	"style": [
+		"file:./social-media.css"
+	],
+	"category": "formatting",
+	"icon": "admin-comments",
+	"keywords": [
+		"style guide",
+		"query"
+	],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "social-media.php"
+	},
+	"align": "full"
+}
