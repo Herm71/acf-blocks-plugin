@@ -28,7 +28,7 @@ function ucsc_add_json_load_point( $paths ) {
 
     return $paths;    
 }
-add_filter( 'acf/settings/load_json', 'ucsc_add_json_load_point' );
+// add_filter( 'acf/settings/load_json', 'ucsc_add_json_load_point' );
 
 /**
  * Add new save point for JSON
@@ -37,7 +37,7 @@ add_filter( 'acf/settings/load_json', 'ucsc_add_json_load_point' );
 function ucsc_add_json_save_point( $path ) {
     return ACF_DIR . '/acf-json';
 }
-add_filter( 'acf/settings/save_json', 'ucsc_add_json_save_point' );
+// add_filter( 'acf/settings/save_json', 'ucsc_add_json_save_point' );
 
 /**
  * We register our block's with WordPress's handy
@@ -148,28 +148,24 @@ wp_reset_postdata();
 }
 
 
-register_meta(
-    'post',
-    'book-genre',
-    array(
-        'show_in_rest' => true,
-        'single'       => true,
-        'type'         => 'string',
-        'default'      => 'Default text field',
-    )
-);
+// Register Meta Fields
 
-add_action( 'init', 'projectslug_register_meta' );
+add_action( 'init', 'acf_register_meta' );
 
-function projectslug_register_meta() {
-	register_meta(
-		'post',
-		'projectslug_mood',
-		array(
-			'show_in_rest'      => true,
-			'single'            => true,
-			'type'              => 'string',
-			'sanitize_callback' => 'wp_strip_all_tags'
-		)
-	);
+function acf_register_meta() {
+	$terms = array('subtitle-copy','first_name','last_name','email','phone', 'website_name', 'website_url', 'brief_bio');
+
+	foreach ( $terms as $term ) {
+		register_meta(
+			'post',
+			$term,
+			array(
+				'show_in_rest'      => true,
+				'single'            => true,
+				'type'              => 'string',
+				'sanitize_callback' => 'wp_strip_all_tags'
+			)
+		);
+	}
+
 }
