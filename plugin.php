@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sandbox Plugin
  * Plugin URI: https://github.com/Herm71/blackbird-core-functionality-plugin.git
- * Description: Dev plugin for sandbox sites.
+ * Description: Sandbox plugin for trying new shit out.
  * Version: 1.1.0
  * Author: Blackbird
  * Author URI: https://jasonchafin.com/
@@ -50,7 +50,7 @@ function register_acf_blocks() {
 	register_block_type( __DIR__ . '/blocks/editorial-style-guide' );
 }
 
-add_action( 'init', 'register_acf_blocks' );
+// add_action( 'init', 'register_acf_blocks' );
 
 
 
@@ -114,7 +114,7 @@ function bb_a_z_style_guide_single_loop2(){
 
 /** Template Loop */
 
-add_shortcode( 'style-archive','bb_a_z_styles_archive_loop' );
+// add_shortcode( 'style-archive','bb_a_z_styles_archive_loop' );
 function bb_a_z_styles_archive_loop() {
 	$finalloop = ''; 
 	// Call Post
@@ -153,7 +153,7 @@ wp_reset_postdata();
 add_action( 'init', 'acf_register_meta' );
 
 function acf_register_meta() {
-	$terms = array('subtitle-copy','first_name','last_name','email','phone', 'website_name', 'website_url', 'brief_bio');
+	$terms = array('first_name','last_name','email','phone', 'website', 'title', 'address', 'city', 'state', 'zip', 'bio', 'photo');
 
 	foreach ( $terms as $term ) {
 		register_meta(
